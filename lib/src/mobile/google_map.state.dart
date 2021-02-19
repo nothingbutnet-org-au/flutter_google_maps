@@ -170,6 +170,7 @@ class GoogleMapState extends gmap.GoogleMapStateBase {
     String icon,
     String info,
     String infoSnippet,
+    double zIndex = 0.0,
     ValueChanged<String> onTap,
     VoidCallback onInfoWindowTap,
   }) async {
@@ -204,6 +205,7 @@ class GoogleMapState extends gmap.GoogleMapStateBase {
               onTap: onInfoWindowTap,
             )
           : null,
+      zIndex: zIndex,
     );
 
     _setState(() => _markers[key] = marker);
@@ -216,6 +218,7 @@ class GoogleMapState extends gmap.GoogleMapStateBase {
         icon: marker.icon,
         info: marker.info,
         infoSnippet: marker.infoSnippet,
+        zIndex: marker.zIndex,
         onTap: marker.onTap,
         onInfoWindowTap: marker.onInfoWindowTap,
       );

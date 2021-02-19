@@ -19,6 +19,7 @@ class Marker {
     this.icon,
     this.info,
     this.infoSnippet,
+    this.zIndex = 0.0,
     this.onTap,
     this.onInfoWindowTap,
   });
@@ -41,6 +42,10 @@ class Marker {
 
   /// [infoSnippet] sets snippet text for `InfoWindow`.
   final String infoSnippet;
+
+  /// The z-index of the marker, used to determine relative drawing order of
+  /// map overlays.
+  final double zIndex;
 
   /// If [onTap] is not null, [info] popup will not be shown.
   final ValueChanged<String> onTap;

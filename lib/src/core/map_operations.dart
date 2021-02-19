@@ -133,6 +133,7 @@ abstract class MapMarkers {
     String icon,
     String info,
     String infoSnippet,
+    double zIndex = 0.0,
     ValueChanged<String> onTap,
     VoidCallback onInfoWindowTap,
   });

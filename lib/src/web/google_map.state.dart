@@ -143,6 +143,7 @@ class GoogleMapState extends GoogleMapStateBase {
     String icon,
     String info,
     String infoSnippet,
+    double zIndex = 0.0,
     ValueChanged<String> onTap,
     ui.VoidCallback onInfoWindowTap,
   }) {
@@ -165,7 +166,8 @@ class GoogleMapState extends GoogleMapStateBase {
       ..map = _map
       ..label = label
       ..icon = _getImage(icon)
-      ..position = position.toLatLng();
+      ..position = position.toLatLng()
+      ..zIndex = zIndex;
 
     if (info != null || onTap != null) {
       _subscriptions.add(marker.onClick.listen((_) async {
